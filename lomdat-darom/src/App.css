@@ -1,5 +1,22 @@
+@font-face {
+  font-family: headlineFont;
+  src: url(fonts/Cooperative-Bold.otf);
+}
+
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  direction: rtl;
+  /* text-align: center; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  direction: rtl; */
+}
+
+.headline{
+  font-family: headlineFont;
 }
 
 /* .App-logo {

@@ -1,0 +1,29 @@
+.first-page{
+    background-image: url(../../images/first-back.png);
+    background-size: 100% 100%;
+    width: 100vW;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.background-first{
+    height: 100vh;
+}
+.first-headline{
+    z-index: 1;
+    width: 70%;
+    font-size: 11vh;
+}
+
+.btn{
+    width: fit-content;
+    height: fit-content;
+    padding: 1vw 1vh;
+    font-size: 3vh;
+    background-color: #c36b0e;
+    border: #5b320c solid 1vh;
+}
