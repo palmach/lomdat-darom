@@ -1,18 +1,32 @@
-import './App.css';
+import "./App.css";
 import React, { useState } from "react";
-import FirstPage from './Container/firstPage/FirstPage';
-
+import FirstPage from "./Container/firstPage/FirstPage";
+import QuestionsContainer from "./Container//questionsContainer/QuestionsContainer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-
   const [pageNum, setPageNum] = useState(0);
-
+  const [questionNum, setQuestionNum] = useState(0);
 
   return (
     <div className="App">
-      <header className="App-header">
-       <FirstPage pageNum={pageNum} setPageNum={setPageNum} />
-      </header>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <FirstPage pageNum={pageNum} setPageNum={setPageNum} />
+          </Route>
+          <Route exact path="/questions">
+            <QuestionsContainer
+              pageNum={pageNum}
+              setPageNum={setPageNum}
+              questionNum={questionNum}
+              setQuestionNum={setQuestionNum}
+            />
+          </Route>
+          <Route exact path="/end"></Route>
+        </Switch>
+      </Router>
+      <header className="App-header"></header>
     </div>
   );
 }

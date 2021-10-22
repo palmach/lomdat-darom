@@ -1,18 +1,46 @@
 @font-face {
   font-family: headlineFont;
-  src: url(fonts/Cooperative-Bold.otf);
+  src: url(fonts/ShmulikHasamba-Medium.otf);
+}
+@font-face {
+  font-family: answersFont;
+  src: url(fonts/FbSpoiler-Regular.otf);
+}
+@font-face {
+  font-family: quoteFont;
+  src: url(fonts/Cooperative-Regular.otf);
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  
 }
 
 .App {
   width: 100vw;
   height: 100vh;
   direction: rtl;
+  /* overflow: hidden; */
   /* text-align: center; */
   /* display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   direction: rtl; */
+}
+
+.btn{
+  width: fit-content;
+  height: fit-content;
+    padding: 1vh 5.5vw;
+    text-align: center;
+    /* font-size: 5vh; */
+    background-color: #c36b0e;
+    border: #5b320c solid 0.5vh;
+    /* border-radius: 0.8em; */
+    font-family: answersFont;
 }
 
 .headline{

@@ -1,0 +1,21 @@
+.questions-container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.questions-part{
+    position: absolute;
+    top: 3vh;
+    text-align: center;
+    width: 100%;
+
+}
+
+.question-headline{
+    font-size: 9vh;
+    color: #5b320c;
+    z-index: 7;
+    /* position: absolute;
+    top: 3vh; */
+    /* text-align: center; */
+}

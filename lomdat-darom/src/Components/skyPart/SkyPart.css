@@ -1,0 +1,37 @@
+.clear-back {
+  fill: none;
+}
+.sky-back {
+  fill: #8ecfd6;
+}
+.sun {
+  fill: #fab52a;
+}
+.cls-4 {
+  clip-path: url(#clip-path);
+}
+.clouds-div {
+  opacity: 0.58;
+}
+.clouds5,
+.clouds1,
+.clouds2,
+.clouds3,
+.clouds4 {
+  fill: #fff;
+}
+.clouds1 {
+  opacity: 0.79;
+}
+.clouds2 {
+  opacity: 0.3;
+}
+.clouds3 {
+  opacity: 0.2;
+}
+.clouds4 {
+  opacity: 0.6;
+}
+.clouds5 {
+  opacity: 0.7;
+}

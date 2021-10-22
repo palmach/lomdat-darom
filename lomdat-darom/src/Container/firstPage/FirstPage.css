@@ -1,4 +1,4 @@
-.first-page{
+.first-page {
     background-image: url(../../images/first-back.png);
     background-size: 100% 100%;
     width: 100vW;
@@ -10,20 +10,39 @@
     text-align: center;
 }
 
-.background-first{
+.background-first {
     height: 100vh;
 }
-.first-headline{
+
+.first-headline {
     z-index: 1;
+    height: fit-content;
     width: 70%;
-    font-size: 11vh;
+    font-size: 16vw;
+    color: #c36b0e;
+    line-height: 11vh;
+    display: flex;
+    text-shadow: 4.5px 0px 1px #5b320c;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 3vh;
 }
 
-.btn{
-    width: fit-content;
-    height: fit-content;
-    padding: 1vw 1vh;
-    font-size: 3vh;
-    background-color: #c36b0e;
-    border: #5b320c solid 1vh;
+.bigger-word {
+    font-size: 28vw;
+}
+
+.start-btn {
+    color: #ead4c1;
+    /* margin-top: 3vh; */
+    margin-bottom: 7vh;
+    font-size: 4vh;
+    border-radius: 0.8em;
+    font-weight: 600;
+}
+
+.welcom-text {
+    font-size: 5vh;
+    width: 90%;
+    font-family: answersFont;
 }
