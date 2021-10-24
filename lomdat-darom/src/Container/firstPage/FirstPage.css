@@ -46,3 +46,8 @@
     width: 90%;
     /* font-family: answersFont; */
 }
+
+.text-opening{
+    opacity: 0;
+    display: none;
+}

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./FirstPage.css";
 import { useHistory } from "react-router-dom";
-// import FirstPage from "./Container/firstPage/FirstPage";
+import gsap from "gsap";
+import Text from "./../../Text.json";
 
 function FirstPage(props) {
   const history = useHistory();
@@ -20,8 +21,13 @@ function FirstPage(props) {
       console.log("000");
 
       const timer = setTimeout(() => {
-        setTextArray(oldArray => [...oldArray, emptyTextArray[0]])
-      }, 1500);
+        setTextArray((oldArray) => [...oldArray, emptyTextArray[0]]);
+        gsap.to(".text-opening0", {
+          display: "block",
+          opacity: 1,
+          duration: 0.5,
+        });
+      }, 500);
       return () => clearTimeout(timer);
     } else if (props.pageNum === 2) {
       history.push("/questions");
@@ -30,10 +36,20 @@ function FirstPage(props) {
 
   useEffect(() => {
     if (textArray.length === 1) {
-      console.log("222");
-
       const timer = setTimeout(() => {
-        setTextArray(oldArray => [...oldArray, emptyTextArray[1]])
+        setTextArray((oldArray) => [...oldArray, emptyTextArray[1]]);
+        gsap.to(".text-opening1", {
+          display: "block",
+          opacity: 1,
+          duration: 0.8,
+        });
+        gsap.to(".start-btn", {
+          display: "block",
+          opacity: 1,
+          duration: 0.8,
+          delay:1
+        });
+
       }, 1500);
       return () => clearTimeout(timer);
     }
@@ -48,16 +64,21 @@ function FirstPage(props) {
       ) : (
         <div className="welcom-text">
           {textArray.map((line, index) => {
-            return <p key={index} className="text-questions">{line}</p>;
+            return (
+              <p
+                key={index}
+                className={`text-questions text-opening text-opening${index}`}
+              >
+                {line}
+              </p>
+            );
           })}
-          {/* <p>שלום וברוכים הבאים ללומדת מורשת פיקוד הדרום!</p>
-            <p>בואו להוכיח שאתם מכירים את הגזרה הדרומית בצורה הטובה ביותר!</p> */}
         </div>
       )}
-      {/* <div className="first-headline headline"><div className="bigger-word">לומדת</div> פיקוד דרום</div> */}
-      <div className="start-btn btn" onClick={changeText}>{`${
-        props.pageNum === 0 ? "התחל לומדה" : "בואו נתחיל!"
-      }`}</div>
+      <div
+        className={`start-btn btn ${props.pageNum === 1 && "text-opening"} `}
+        onClick={changeText}
+      >{`${props.pageNum === 0 ? "התחל לומדה" : "בואו נתחיל!"}`}</div>
     </div>
   );
 }

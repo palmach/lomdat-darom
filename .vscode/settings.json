@@ -1,0 +1,31 @@
+{
+    "bracket-pair-colorizer-2.unmatchedScopeColor": "#CD533B",
+    "bracket-pair-colorizer-2.colors": [
+        "#CA8067",
+        "#C7AC92",
+        "#C0BABC",
+        "#C2EABD",
+        "#DCF2B0"
+        // "#19d687"
+    ],
+    "bracket-pair-colorizer-2.excludedLanguages": [
+    
+    ],
+    "bracket-pair-colorizer-2.activeScopeCSS": [
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}",
+        "opacity: 0.5"
+    ],
+    "bracket-pair-colorizer-2.scopeLineCSS": [
+
+
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}",
+        "opacity: 0.5"
+    ],
+    "bracket-pair-colorizer-2.showVerticalScopeLine": false,
+    "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
+    "bracket-pair-colorizer-2.scopeLineRelativePosition": false
+}
