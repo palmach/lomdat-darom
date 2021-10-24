@@ -1,0 +1,8 @@
+.answer{
+    height: fit-content;
+    width: 80%;
+    border-radius: 0.7em;
+    font-size: 6vw;
+    margin: 1vh;
+    /* color: rgb(28, 247, 112); */
+}

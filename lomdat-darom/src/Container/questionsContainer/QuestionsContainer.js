@@ -1,29 +1,28 @@
-// QuestionsContainer
-
 import React, { useState, useEffect } from "react";
 import "./QuestionsContainer.css";
-import SkyPart from "../../Components/skyPart/SkyPart";
-import DesertPart from "../../Components/desertPart/DesertPart";
-import Text from "./../../Text.json";
+// import SkyPart from "../../Components/skyPart/SkyPart";
+// import DesertPart from "../../Components/desertPart/DesertPart";
+import Answer from "../../Components/answer/Answer";
+// import Explain from "../../Components/explain/Explain";
+import Text from "../../Text.json";
+import { Markup } from "interweave";
 
-// import { useHistory } from "react-router-dom";
 
 function QuestionsContainer(props) {
-    // const history = useHistory();
-    // const changeText =()=>{props.setPageNum((prevState) => prevState + 1)}
+//   const changeQuestion = () => {
+//     props.setQuestionNum((prevState) => prevState + 1);
+//   };
 
-    // useEffect(()=>{
-    //     },[props.pageNum]);
-
+  // useEffect(console.log(hasExplain),[hasExplain])
   return (
     <div className="questions-container">
-        <SkyPart/>
-        <DesertPart/>
-        <div className="questions-part">
-            <p className="headline question-headline">שאלה {props.questionNum+1}</p>
-            <div className="question">{Text[props.questionNum].q}</div>
-
-        </div>
+      
+          <div className="answers-container">
+            <Markup className="question text-questions" content={Text[props.questionNum]["q"]} />
+            {Text[props.questionNum]["answers"].map((ans, index) => {
+              return <Answer questionNum={props.questionNum} key={index} ansText={ans} ansNum={index} changeQuestion={props.changeQuestion} />;
+            })}
+          </div>
     </div>
   );
 }

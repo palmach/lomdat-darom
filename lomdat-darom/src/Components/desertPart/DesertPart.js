@@ -17,7 +17,6 @@ function DesertPart(props) {
             <rect className="clear-back" y="-69.45" width="1081" height="829" />
           </clipPath>
         </defs>
-        <title>desert-part_1</title>
         <g className="desert">
           <path
             className="mountain1"

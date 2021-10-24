@@ -16,7 +16,6 @@ function SkyPart(props) {
             <rect className="clear-back" width="1081" height="564" />
           </clipPath>
         </defs>
-        <title>Artboard 36</title>
         <rect className="sky-back" x="-2" y="-19" width="1083" height="1623" />
         <circle className="sun" cx="532.51" cy="310.09" r="175.91" />
         <g className="clouds-div">
