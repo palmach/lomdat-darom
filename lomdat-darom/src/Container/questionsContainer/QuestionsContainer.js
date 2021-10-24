@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import "./QuestionsContainer.css";
 import SkyPart from "../../Components/skyPart/SkyPart";
 import DesertPart from "../../Components/desertPart/DesertPart";
-import Text from "./../../text.json";
+import Text from "./../../Text.json";
 
 // import { useHistory } from "react-router-dom";
 
