@@ -34,7 +34,6 @@
 
 .start-btn {
     color: #ead4c1;
-    /* margin-top: 3vh; */
     margin-bottom: 7vh;
     font-size: 4vh;
     border-radius: 0.8em;
@@ -44,7 +43,6 @@
 .welcom-text {
     font-size: 5vh;
     width: 90%;
-    /* font-family: answersFont; */
 }
 
 .text-opening{

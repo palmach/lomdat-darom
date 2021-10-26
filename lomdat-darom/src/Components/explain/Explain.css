@@ -3,12 +3,7 @@
 }
 
 .explain-part{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
     height: 80%;
-    justify-content: space-around;
 }
 
 .explain-text{

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./QuizzPart.css";
+import Map from "../../Components/map/Map";
 import SkyPart from "../../Components/skyPart/SkyPart";
 import DesertPart from "../../Components/desertPart/DesertPart";
 import Explain from "../../Components/explain/Explain";
 import QuestionsContainer from "../questionsContainer/QuestionsContainer";
 import Text from "../../Text.json";
-import { Markup } from "interweave";
 
 function QuizzPart(props) {
   const hasExplain =
     Text[props.questionNum]["explain"] !== "" ||
     Text[props.questionNum]["pic"] !== "";
   const [toExplain, setToExplain] = useState(false);
-  console.log("has "+hasExplain);
-  console.log("toExplain " +toExplain);
+  // console.log("has "+hasExplain);
+  // console.log("toExplain " +toExplain);
 
 
   useEffect(() => {
@@ -48,11 +48,17 @@ function QuizzPart(props) {
             changeFromExplain={changeFromExplain}
             />
             ) : (
+              props.questionNum !== 5?
               <QuestionsContainer
               questionNum={props.questionNum}
               changeFromExplain={changeFromExplain}
             changeQuestion={changeQuestion}
             hasExplain={hasExplain}
+          />
+          :
+          <Map
+            changeQuestion={changeQuestion}
+            questionNum={props.questionNum} 
           />
         )}
       </div>

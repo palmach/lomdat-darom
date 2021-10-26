@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./FirstPage.css";
 import { useHistory } from "react-router-dom";
 import gsap from "gsap";
-import Text from "./../../Text.json";
 
 function FirstPage(props) {
   const history = useHistory();
   const [textArray, setTextArray] = useState([]);
-  const [emptyTextArray, setEmptyTextArray] = useState([
+  const emptyTextArray = [
     "שלום וברוכים הבאים ללומדת מורשת פיקוד הדרום!",
     "בואו להוכיח שאתם מכירים את הגזרה הדרומית בצורה הטובה ביותר!",
-  ]);
+  ];
 
   const changeText = () => {
     props.setPageNum((prevState) => prevState + 1);
@@ -18,8 +17,6 @@ function FirstPage(props) {
 
   useEffect(() => {
     if (props.pageNum === 1) {
-      console.log("000");
-
       const timer = setTimeout(() => {
         setTextArray((oldArray) => [...oldArray, emptyTextArray[0]]);
         gsap.to(".text-opening0", {
@@ -47,9 +44,8 @@ function FirstPage(props) {
           display: "block",
           opacity: 1,
           duration: 0.8,
-          delay:1
+          delay: 1,
         });
-
       }, 1500);
       return () => clearTimeout(timer);
     }

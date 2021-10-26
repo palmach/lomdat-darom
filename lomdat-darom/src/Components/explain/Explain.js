@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Explain.css";
 import { Markup } from "interweave";
 import Text from "./../../Text.json";
 
 function Explain(props) {
   return (
-    <div className="explain-part" >
+    <div className="explain-part under-question-headlie" >
         <Markup className="explian text-questions explain-text" content={Text[props.questionNum]["explain"]} />
         <div>{Text[props.questionNum]["pic"]}</div>
         <div className="btn next-btn change-explain" onClick={props.changeFromExplain}>הבא</div>

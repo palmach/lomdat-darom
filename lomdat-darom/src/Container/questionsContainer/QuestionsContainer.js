@@ -6,7 +6,7 @@ import { Markup } from "interweave";
 
 function QuestionsContainer(props) {
   return (
-    <div className="questions-container">
+    <div className="questions-container under-question-headlie">
       <div className="answers-container">
         <Markup
           className="question text-questions"

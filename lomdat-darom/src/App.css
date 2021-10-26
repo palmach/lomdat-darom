@@ -43,3 +43,11 @@ body{
 .text-questions{
   font-family: answersFont;
 }
+
+.under-question-headlie{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
