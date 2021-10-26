@@ -1,5 +1,4 @@
-// SkyPart
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./SkyPart.css";
 
 function SkyPart(props) {

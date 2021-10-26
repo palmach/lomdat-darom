@@ -8,7 +8,7 @@ function Explain(props) {
     <div className="explain-part" >
         <Markup className="explian text-questions explain-text" content={Text[props.questionNum]["explain"]} />
         <div>{Text[props.questionNum]["pic"]}</div>
-        <div className="btn next-btn">הבא</div>
+        <div className="btn next-btn change-explain" onClick={props.changeFromExplain}>הבא</div>
     </div>
   );
 }

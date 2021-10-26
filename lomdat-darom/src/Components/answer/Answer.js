@@ -1,40 +1,36 @@
-// Answer
-
 import React, { useState, useEffect, useRef } from "react";
 import "./Answer.css";
 import gsap from "gsap";
-
 import Text from "./../../Text.json";
 
-
 function Answer(props) {
-    const colorRef = useRef();
-
-    // const history = useHistory();
-    // const changeText =()=>{props.setPageNum((prevState) => prevState + 1)}
-
-    // useEffect(()=>{
-    //     },[props.pageNum]);
-
-    const checkAns = (event) => {
-        if(props.ansNum === Number(Text[props.questionNum]["a"])){
-            gsap.to(colorRef.current, { backgroundColor: "rgb(28, 247, 112)" });
-        } else{
-            gsap.to(colorRef.current, { backgroundColor: "rgb(211, 9, 9" });
-            gsap.to(".correct", { backgroundColor: "rgb(28, 247, 112)", delay:0.25 });
-            
-        }
-        const timer = setTimeout(()=>{
-            props.changeQuestion();
-            gsap.to(".correct", { backgroundColor: "#00000000", delay:0.75 });
-
-        },2500);
-        return()=>clearTimeout(timer);
+  const colorRef = useRef();
+  const checkAns = (event) => {
+    if (props.ansNum === Number(Text[props.questionNum]["a"])) {
+      gsap.to(colorRef.current, { backgroundColor: "#56821D" });
+    } else {
+      gsap.to(colorRef.current, { backgroundColor: "#bb3c02" });
+      gsap.to(".correct", { backgroundColor: "#56821D", delay: 0.25 });
     }
+    const timer = setTimeout(() => {
+      props.changeQuestion();
+    }, 2500);
+    return () => clearTimeout(timer);
+  };
+
+  useEffect(() => {
+    gsap.to(colorRef.current, { backgroundColor: "#c36b0e", duration: 0 });
+  }, [props.ansText]);
 
   return (
-    <div className={`answer btn text-questions ${props.ansNum === Number(Text[props.questionNum]["a"])&& "correct"}`} onClick={checkAns} ref={colorRef} >
-        {props.ansText}
+    <div
+      className={`answer btn text-questions ${
+        props.ansNum === Number(Text[props.questionNum]["a"]) && "correct"
+      }`}
+      onClick={checkAns}
+      ref={colorRef}
+    >
+      {props.ansText}
     </div>
   );
 }

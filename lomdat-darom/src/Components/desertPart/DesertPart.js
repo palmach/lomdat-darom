@@ -1,6 +1,4 @@
-// DesertPart
-
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./DesertPart.css";
 
 function DesertPart(props) {
@@ -182,11 +180,41 @@ function DesertPart(props) {
             className="mountain8"
             d="M206.61,514.2c-16.13,0-29.2,2.35-29.2,5.24s13.07,5.24,29.2,5.24,29.2-2.35,29.2-5.24S222.73,514.2,206.61,514.2Zm-7.05,4.66c-6,0-10.9-.89-10.9-2s4.88-2,10.9-2,10.9.89,10.9,2S205.58,518.86,199.56,518.86Z"
           />
-          <ellipse className="mountain8" cx="165.57" cy="527.57" rx="10.9" ry="1.98" />
-          <ellipse className="mountain8" cx="193.13" cy="537.32" rx="10.9" ry="1.98" />
-          <ellipse className="mountain2" cx="934.36" cy="516.6" rx="10.9" ry="1.98" />
-          <ellipse className="mountain8" cx="425.97" cy="742" rx="10.9" ry="1.98" />
-          <ellipse className="mountain2" cx="450.34" cy="722.37" rx="18.62" ry="3.39" />
+          <ellipse
+            className="mountain8"
+            cx="165.57"
+            cy="527.57"
+            rx="10.9"
+            ry="1.98"
+          />
+          <ellipse
+            className="mountain8"
+            cx="193.13"
+            cy="537.32"
+            rx="10.9"
+            ry="1.98"
+          />
+          <ellipse
+            className="mountain2"
+            cx="934.36"
+            cy="516.6"
+            rx="10.9"
+            ry="1.98"
+          />
+          <ellipse
+            className="mountain8"
+            cx="425.97"
+            cy="742"
+            rx="10.9"
+            ry="1.98"
+          />
+          <ellipse
+            className="mountain2"
+            cx="450.34"
+            cy="722.37"
+            rx="18.62"
+            ry="3.39"
+          />
         </g>
         <path className="clear-back" d="M992,449.53l8-488" />
       </svg>
