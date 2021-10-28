@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./QuizzPart.css";
-import Map from "../../Components/map/Map";
+// import Map from "../../Components/map/Map";
+// import FillAns from "../../Components/fillAns/FillAns";
 import SkyPart from "../../Components/skyPart/SkyPart";
 import DesertPart from "../../Components/desertPart/DesertPart";
 import Explain from "../../Components/explain/Explain";
@@ -15,13 +16,17 @@ function QuizzPart(props) {
   // console.log("has "+hasExplain);
   // console.log("toExplain " +toExplain);
 
-
   useEffect(() => {
     console.log(76);
     if (hasExplain === true) {
       setToExplain(true);
     } else {
       setToExplain(false);
+    }
+
+    //למחוק כאשר אוכל לעבוד על השאלה של המפה
+    if (props.questionNum === 5) {
+      props.setQuestionNum((prevState) => prevState + 1);
     }
   }, [props.questionNum]);
 
@@ -46,21 +51,28 @@ function QuizzPart(props) {
           <Explain
             questionNum={props.questionNum}
             changeFromExplain={changeFromExplain}
-            />
-            ) : (
-              props.questionNum !== 5?
-              <QuestionsContainer
-              questionNum={props.questionNum}
-              changeFromExplain={changeFromExplain}
+          />
+        // ) : props.questionNum === 7 ? (
+        //   <FillAns
+        //     questionNum={props.questionNum}
+        //     changeQuestion={changeQuestion}
+        //   />
+        // ) : props.questionNum === 5 ? (
+        //   <div></div>
+        //   // {props.setQuestionNum((prevState) => prevState + 1)}
+        //   // <Map
+        //   //   changeQuestion={changeQuestion}
+        //   //   questionNum={props.questionNum}
+        //   // />
+          ) : (
+          <QuestionsContainer
+            questionNum={props.questionNum}
             changeQuestion={changeQuestion}
+            changeFromExplain={changeFromExplain}
             hasExplain={hasExplain}
           />
-          :
-          <Map
-            changeQuestion={changeQuestion}
-            questionNum={props.questionNum} 
-          />
-        )}
+        )
+        }
       </div>
     </div>
   );

@@ -1,0 +1,12 @@
+.blank-tab{
+    width: 11vw;
+}
+
+.tabs{
+    font-family: answersFont;
+    font-size: 8vh;;
+}
+
+.text-tab{
+    display: inline;
+}
