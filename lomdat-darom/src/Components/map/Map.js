@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Map.css";
 import Text from "./../../Text.json";
-import CityDrop from "./../cityDrop/CityDrop";
-import CityDrag from "./../cityDrag/CityDrag";
 import { DragDropContainer, DropTarget } from "react-drag-drop-container";
 
-import { gsap, TweenLite } from "gsap";
+import { gsap } from "gsap";
 
 function Map(props) {
   const [data, setData] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
