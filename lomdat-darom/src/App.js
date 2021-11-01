@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const [pageNum, setPageNum] = useState(0);
-  const [questionNum, setQuestionNum] = useState(0);
+  const [questionNum, setQuestionNum] = useState(5);
 
   return (
     <div className="App">

@@ -11,7 +11,7 @@ function SkyPart(props) {
         viewBox="0 0 1081 1604"
       >
         <defs>
-          <clipPath id="clip-path">
+          <clipPath id="clip-path-sky">
             <rect className="clear-back" width="1081" height="564" />
           </clipPath>
         </defs>

@@ -25,9 +25,9 @@ function QuizzPart(props) {
     }
 
     //למחוק כאשר אוכל לעבוד על השאלה של המפה
-    if (props.questionNum === 5) {
-      props.setQuestionNum((prevState) => prevState + 1);
-    }
+    // if (props.questionNum === 5) {
+    //   props.setQuestionNum((prevState) => prevState + 1);
+    // }
   }, [props.questionNum]);
 
   const changeQuestion = () => {

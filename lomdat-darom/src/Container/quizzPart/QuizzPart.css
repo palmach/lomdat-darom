@@ -30,7 +30,8 @@
 
 .question{
     font-size: 4vh;
-    width: 95%;
+    width: 99%;
+    margin: 1vh;
 }
 
 .answers-container{

@@ -1,9 +1,23 @@
-.map-part{
-    height: 71%;
+/* .cls-1 {
+  fill: none;
+}
+.cls-2 {
+  clip-path: url(#clip-path-map);
+}
+.cls-3 {
+  fill: #ab7320;
+}
+.cls-4 {
+  fill: #36516b;
+} */
+
+.map-part {
+  height: 71%;
 }
 
-.map{
-    height: 100%;
+.map {
+  /* height: 100%; */
+  width: 69%;
 }
 
 .cls-1 {
@@ -28,48 +42,96 @@
   fill: url(#linear-gradient);
 }
 
-.city-container{
-    width: 95%;
-    border-radius: 0.5em;
-    padding: 0.7vh 0.5vw;
-    height: -moz-fit-content;
-    height: fit-content;
-    background-color: aqua;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: space-around;
-    border: solid 0.5vh;
+.city-container {
+  width: 95%;
+  border-radius: 0.5em;
+  padding: 0.7vh 0.5vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: aqua;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+  border: solid 0.5vh;
 }
 
-.map-cont{
-    width: 100%;
-    height: 63%;
+.map-cont {
+  width: 100%;
+  /* height: fit-content; */
+  height: 63%;
+  margin: 3vh;
 }
 
-.city-drag{
-    font-size: 3vh;
-    margin: 0.3vh;
-    background: burlywood;
-    padding: 1vh;
-    border: solid 0.5vh;
-    border-radius: 0.5em;
+.city-drag {
+  font-size: 3vh;
+  margin: 0.3vh;
+  background: burlywood;
+  padding: 1vh;
+  border: solid 0.5vh;
+  border-radius: 0.5em;
 }
 
-.drop-city{
-    width: 15vw;
-    height: 5vh;
-    border: solid 0.5vh;
-    background: antiquewhite;
-
+.drop-city {
+  width: 20vw;
+  height: 5vh;
+  border: solid 0.5vh;
+  background: antiquewhite;
+  position: absolute;
 }
 
-.drop-cont{
-        width: 100%;
-    height: 45%;
-    /* background-color: brown; */
-    position: absolute;
-    top: 11vh;
-    display: flex;
-    flex-wrap: wrap;
+.drop-cont {
+  width: 100%;
+  height: 35%;
+  /* background-color: brown; */
+  position: absolute;
+  top: 28%;
+  display: flex;
+  flex-wrap: wrap;
+  /* display: none; */
+}
+
+.drop1 {
+  left: 42%;
+  top: 1%;
+}
+.drop2 {
+  left: 46%;
+  top: 14%;
+}
+.drop3 {
+  left: 42%;
+  top: 1%;
+}
+.drop4 {
+  left: 42%;
+  top: 1%;
+}
+.drop5 {
+  left: 42%;
+  top: 1%;
+}
+.drop6 {
+  left: 42%;
+    top: 33%;
+}
+.drop7 {
+  left: 42%;
+  top: 0%;
+}
+.drop8 {
+  left: 42%;
+  top: 1%;
+}
+.drop9 {
+  left: 42%;
+  top: 1%;
+}
+.drop10 {
+  left: 42%;
+  top: 1%;
+}
+.drop0 {
+  left: 42%;
+  top: 1%;
 }

@@ -20,13 +20,13 @@ function QuestionsContainer(props) {
             changeQuestion={props.changeQuestion}
           />
         ) : props.questionNum === 5 ? (
-          <div></div>
-        ) : (
+          // <div></div>
           // {props.setQuestionNum((prevState) => prevState + 1)}
-          // <Map
-          //   changeQuestion={changeQuestion}
-          //   questionNum={props.questionNum}
-          // />
+          <Map
+            changeQuestion={props.changeQuestion}
+            questionNum={props.questionNum}
+          />
+        ) : (
           Text[props.questionNum]["answers"].map((ans, index) => {
             return (
               <Answer
