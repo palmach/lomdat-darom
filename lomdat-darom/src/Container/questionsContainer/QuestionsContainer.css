@@ -6,3 +6,10 @@
     height: 74%;
     justify-content: space-between;
 }
+
+.cheack-btn {
+    border-radius: 0.3em;
+    align-self: flex-end;
+    margin: 1vh;
+    font-size: 4vh;
+}

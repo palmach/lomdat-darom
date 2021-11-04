@@ -4,6 +4,8 @@ import "./QuizzPart.css";
 // import FillAns from "../../Components/fillAns/FillAns";
 import SkyPart from "../../Components/skyPart/SkyPart";
 import DesertPart from "../../Components/desertPart/DesertPart";
+import FlowersPart from "../../Components/flowersPart/FlowersPart";
+import GrassPart from "../../Components/grassPart/GrassPart";
 import Explain from "../../Components/explain/Explain";
 import QuestionsContainer from "../questionsContainer/QuestionsContainer";
 import Text from "../../Text.json";
@@ -13,11 +15,8 @@ function QuizzPart(props) {
     Text[props.questionNum]["explain"] !== "" ||
     Text[props.questionNum]["pic"] !== "";
   const [toExplain, setToExplain] = useState(false);
-  // console.log("has "+hasExplain);
-  // console.log("toExplain " +toExplain);
 
   useEffect(() => {
-    console.log(76);
     if (hasExplain === true) {
       setToExplain(true);
     } else {
@@ -42,7 +41,13 @@ function QuizzPart(props) {
   return (
     <div className="quizz-part">
       <SkyPart />
+      {props.questionNum>=0 && props.questionNum <5 ?
       <DesertPart />
+      :props.questionNum>=5 && props.questionNum <10 ?
+      <GrassPart />
+      :
+      <FlowersPart/>
+      }
       <div className="questions-part">
         <p className="headline question-headline">
           שאלה {props.questionNum + 1}
@@ -52,27 +57,14 @@ function QuizzPart(props) {
             questionNum={props.questionNum}
             changeFromExplain={changeFromExplain}
           />
-        // ) : props.questionNum === 7 ? (
-        //   <FillAns
-        //     questionNum={props.questionNum}
-        //     changeQuestion={changeQuestion}
-        //   />
-        // ) : props.questionNum === 5 ? (
-        //   <div></div>
-        //   // {props.setQuestionNum((prevState) => prevState + 1)}
-        //   // <Map
-        //   //   changeQuestion={changeQuestion}
-        //   //   questionNum={props.questionNum}
-        //   // />
-          ) : (
+        ) : (
           <QuestionsContainer
             questionNum={props.questionNum}
             changeQuestion={changeQuestion}
             changeFromExplain={changeFromExplain}
             hasExplain={hasExplain}
           />
-        )
-        }
+        )}
       </div>
     </div>
   );

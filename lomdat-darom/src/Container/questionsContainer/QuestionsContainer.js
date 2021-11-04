@@ -7,6 +7,12 @@ import Text from "../../Text.json";
 import { Markup } from "interweave";
 
 function QuestionsContainer(props) {
+  const [isCheacked, setIsCheacked] = useState(false);
+  const cheackAns = () => {
+    console.log("chchcch");
+    setIsCheacked(true);
+  };
+
   return (
     <div className="questions-container under-question-headlie">
       <div className="answers-container">
@@ -18,10 +24,10 @@ function QuestionsContainer(props) {
           <FillAns
             questionNum={props.questionNum}
             changeQuestion={props.changeQuestion}
+            isCheacked={isCheacked}
+            setIsCheacked={setIsCheacked}
           />
         ) : props.questionNum === 5 ? (
-          // <div></div>
-          // {props.setQuestionNum((prevState) => prevState + 1)}
           <Map
             changeQuestion={props.changeQuestion}
             questionNum={props.questionNum}
@@ -40,9 +46,17 @@ function QuestionsContainer(props) {
           })
         )}
       </div>
-      {props.questionNum === 7 && (
-        <div className="cheack-btn btn" >בדיקה</div>
+      {props.questionNum === 7 && isCheacked === false ? (
+        <div className="cheack-btn btn" onClick={cheackAns}>
+          בדיקה
+        </div>
+      ) :props.questionNum === 7 && isCheacked === true && (
+        <div className="cheack-btn btn" onClick={props.changeQuestion}>
+          הבא
+        </div>
       )}
+
+      {/* // <div className="cheack-btn btn" onClick={}>בדיקה</div> */}
       {props.hasExplain && (
         <div
           className="btn back-btn change-explain"
