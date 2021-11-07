@@ -4,7 +4,7 @@ import "./QuizzPart.css";
 // import FillAns from "../../Components/fillAns/FillAns";
 import SkyPart from "../../Components/skyPart/SkyPart";
 import DesertPart from "../../Components/desertPart/DesertPart";
-import FlowersPart from "../../Components/flowersPart/FlowersPart";
+// import FlowersPart from "../../Components/flowersPart/FlowersPart";
 import GrassPart from "../../Components/grassPart/GrassPart";
 import Explain from "../../Components/explain/Explain";
 import QuestionsContainer from "../questionsContainer/QuestionsContainer";
@@ -22,11 +22,6 @@ function QuizzPart(props) {
     } else {
       setToExplain(false);
     }
-
-    //למחוק כאשר אוכל לעבוד על השאלה של המפה
-    // if (props.questionNum === 5) {
-    //   props.setQuestionNum((prevState) => prevState + 1);
-    // }
   }, [props.questionNum]);
 
   const changeQuestion = () => {
@@ -43,10 +38,10 @@ function QuizzPart(props) {
       <SkyPart />
       {props.questionNum>=0 && props.questionNum <5 ?
       <DesertPart />
-      :props.questionNum>=5 && props.questionNum <10 ?
-      <GrassPart />
-      :
-      <FlowersPart/>
+      :props.questionNum>=5 && 
+      <GrassPart questionNum={props.questionNum} />
+      // :
+      // <FlowersPart/>
       }
       <div className="questions-part">
         <p className="headline question-headline">

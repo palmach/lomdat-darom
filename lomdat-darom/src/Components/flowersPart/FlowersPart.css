@@ -1,38 +1,42 @@
+/* .flowers{
+
+} */
 /* .cls-1 {
   fill: none;
-}
-.cls-2 {
+} */
+/* .cls-2 {
   opacity: 0.9;
+} */
+.flowers-cont {
+  opacity: 0.9;
+  clip-path: url(#clip-path-flowers);
 }
-.cls-3 {
-  clip-path: url(#clip-path);
+.flower-layer-2 {
+  fill: url(#linear-gradient-flowers);
 }
-.cls-4 {
-  fill: url(#linear-gradient);
-}
-.cls-5 {
+/*.cls-5 {
   fill: #210803;
 }
-.cls-6 {
+ .cls-6 {
   fill: #a30000;
+} */
+.flower-layer-3 {
+  fill: url(#linear-gradient-flowers-2);
 }
-.cls-7 {
-  fill: url(#linear-gradient-2);
-}
-.cls-12,
-.cls-8 {
+.airplain-black,
+.airplain-dast {
   fill: #4a4947;
 }
-.cls-8 {
+.airplain-dast {
   opacity: 0.27;
   isolation: isolate;
 }
-.cls-9 {
-  fill: url(#linear-gradient-3);
+.flower-layer-1 {
+  fill: url(#linear-gradient-flowers-3);
 }
-.cls-10 {
+.airplain1 {
   fill: #fcc753;
 }
-.cls-11 {
+.airplain2 {
   fill: #7e421d;
-} */
+}
