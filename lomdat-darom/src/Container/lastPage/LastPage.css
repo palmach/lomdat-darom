@@ -1,0 +1,83 @@
+.end-bush6 {
+  fill: url(#linear-gradient);
+}
+.end-bush7 {
+  fill: url(#linear-gradient-2);
+}
+.end-bush8 {
+  fill: url(#linear-gradient-3);
+}
+.end-hill1 {
+  fill: url(#linear-gradient-8);
+}
+.end-hill8 {
+  fill: url(#linear-gradient-9);
+}
+.end-hill7 {
+  fill: url(#linear-gradient-11);
+}
+.end-hill6 {
+  fill: url(#linear-gradient-12);
+}
+.end-bush1 {
+  fill: url(#linear-gradient-13);
+}
+.end-bush2 {
+  fill: url(#linear-gradient-14);
+}
+.end-bush3 {
+  fill: url(#linear-gradient-15);
+}
+.end-bush4 {
+  fill: url(#linear-gradient-16);
+}
+.end-bush5 {
+  fill: url(#linear-gradient-17);
+}
+.end-hill5 {
+  fill: url(#linear-gradient-18);
+}
+.end-hill4 {
+  fill: url(#linear-gradient-24);
+}
+.end-hill3 {
+  fill: url(#linear-gradient-25);
+}
+.end-hill2 {
+  fill: url(#linear-gradient-29);
+}
+.end-flowers1 {
+  fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_2);
+}
+.end-flowers2 {
+  fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_96);
+}
+.end-flowers3 {
+  fill: url(#_ÂÁ_Ï_ÌÌ_È_ËÂÌÚ_71);
+}
+.end-part{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.end-content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.end-quote{
+    font-family: quoteFont;
+    font-size: 7vh;
+}
+
+.end-text{
+    font-family: answersFont;
+
+}

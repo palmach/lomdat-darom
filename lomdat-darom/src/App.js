@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import FirstPage from "./Container/firstPage/FirstPage";
+import LastPage from "./Container/lastPage/LastPage";
 import QuizzPart from "./Container/quizzPart/QuizzPart";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -23,7 +24,9 @@ function App() {
               setQuestionNum={setQuestionNum}
             />
           </Route>
-          <Route exact path="/end"></Route>
+          <Route exact path="/end">
+            <LastPage pageNum={pageNum} setPageNum={setPageNum} />
+          </Route>
         </Switch>
       </Router>
       <header className="App-header"></header>

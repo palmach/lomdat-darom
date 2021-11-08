@@ -1,5 +1,3 @@
-// FlowersPart
-
 import React from "react";
 import "./FlowersPart.css";
 
@@ -77,7 +75,6 @@ function FlowersPart(props) {
       <title>flowers-part</title>
       <g id="Layer_2" data-name="Layer 2">
         <g id="Layer_1-2" data-name="Layer 1-2">
-          {/* <g className="cls-2"> */}
             <g className="flowers-cont">
               <path
                 className="flower-layer-2"
@@ -167,7 +164,6 @@ function FlowersPart(props) {
             </g>
           </g>
         </g>
-      {/* </g> */}
     </svg>
   );
 }
