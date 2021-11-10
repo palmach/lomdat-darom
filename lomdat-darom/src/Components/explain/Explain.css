@@ -9,9 +9,14 @@
 
 .explain-text{
     font-size: 4vh;
-    width: 90vw;
-    height: 33vh;
+    width: 93vw;
+    height: 51vh;
+    direction: rtl;
+    display: flex;
     overflow-y: scroll;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .pic-cont{

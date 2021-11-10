@@ -6,6 +6,7 @@ import Text from "./../../Text.json";
 function Answer(props) {
   const colorRef = useRef();
   const checkAns = (event) => {
+    props.setIsAnswerd(true);
     if (props.ansNum === Number(Text[props.questionNum]["a"])) {
       gsap.to(colorRef.current, { backgroundColor: "#56821D" });
     } else {
@@ -14,6 +15,8 @@ function Answer(props) {
     }
     const timer = setTimeout(() => {
       props.changeQuestion();
+    props.setIsAnswerd(false);
+      
     }, 2500);
     return () => clearTimeout(timer);
   };

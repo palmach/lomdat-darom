@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./QuizzPart.css";
 import { useHistory } from "react-router-dom";
+import gsap from "gsap";
+
 // import Map from "../../Components/map/Map";
 // import FillAns from "../../Components/fillAns/FillAns";
 import SkyPart from "../../Components/skyPart/SkyPart";
@@ -13,6 +15,7 @@ import Text from "../../Text.json";
 
 function QuizzPart(props) {
   const history = useHistory();
+  const [isAnswerd, setIsAnswerd] = useState(false);
 
   const hasExplain =
     Text[props.questionNum]["explain"] !== "" ||
@@ -25,30 +28,45 @@ function QuizzPart(props) {
     } else {
       setToExplain(false);
     }
-    if(props.questionNum === 13){
+    if (props.questionNum === 13) {
       history.push("/end");
     }
   }, [props.questionNum]);
-
 
   const changeQuestion = () => {
     props.setQuestionNum((prevState) => prevState + 1);
   };
 
   const changeFromExplain = () => {
-    setToExplain((prevState) => !prevState);
-    console.log(toExplain);
+    if (isAnswerd === false && hasExplain) {
+      setToExplain((prevState) => !prevState);
+    }
   };
+
+  useEffect(()=>{
+    if(props.questionNum===0){
+
+      gsap.from(".black-back", { display:"block", opacity:1, duration:1.75 });
+    }
+
+  },[props.questionNum])
+
 
   return (
     <div className="quizz-part">
+      <div className="black-back" ></div>
+
       <SkyPart />
-      {props.questionNum>=0 && props.questionNum <5 ?
-      <DesertPart />
-      :props.questionNum>=5 && 
-      <GrassPart questionNum={props.questionNum} />
-      // :
-      // <FlowersPart/>
+      {
+        props.questionNum >= 0 && props.questionNum < 5 ? (
+          <DesertPart />
+        ) : (
+          props.questionNum >= 5 && (
+            <GrassPart questionNum={props.questionNum} />
+          )
+        )
+        // :
+        // <FlowersPart/>
       }
       <div className="questions-part">
         <p className="headline question-headline">
@@ -62,9 +80,12 @@ function QuizzPart(props) {
         ) : (
           <QuestionsContainer
             questionNum={props.questionNum}
+            pageNum={props.pageNum}
             changeQuestion={changeQuestion}
             changeFromExplain={changeFromExplain}
             hasExplain={hasExplain}
+            isAnswerd={isAnswerd}
+            setIsAnswerd={setIsAnswerd}
           />
         )}
       </div>

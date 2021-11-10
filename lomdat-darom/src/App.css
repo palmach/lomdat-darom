@@ -11,40 +11,39 @@
   src: url(fonts/Cooperative-Regular.otf);
 }
 
-body{
+body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  
 }
 
-.App {
+.app {
   width: 100vw;
   height: 100vh;
   direction: rtl;
 }
 
-.btn{
+.btn {
   width: fit-content;
   height: fit-content;
-    padding: 1vh 5.5vw;
-    text-align: center;
-    /* font-size: 5vh; */
-    background-color: #c36b0e;
-    border: #5b320c solid 0.5vh;
-    /* border-radius: 0.8em; */
-    font-family: answersFont;
+  padding: 1vh 5.5vw;
+  text-align: center;
+  background-color: #c36b0e;
+  border: #5b320c solid 0.5vh;
+  font-family: answersFont;
+  font-weight: 900;
+  color: #5b320c;
 }
 
-.headline{
+.headline {
   font-family: headlineFont;
 }
 
-.text-questions{
+.text-questions {
   font-family: answersFont;
 }
 
-.under-question-headlie{
+.under-question-headlie {
   display: flex;
   flex-direction: column;
   align-items: center;

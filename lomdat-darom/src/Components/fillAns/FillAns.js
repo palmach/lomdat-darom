@@ -5,14 +5,7 @@ import gsap from "gsap";
 import Text from "./../../Text.json";
 
 function FillAns(props) {
-
   const endValue=["ע","מ","ו","ד","ע","נ","נ"]
-  // const [isCheacked, setIsCheacked] = useState(false);
-
-  // const cheackAns=()=>{
-  //   console.log("chchcch");
-  //   props.setIsCheacked(true);
-  // }
 
   return (
     <div className="fill-btn-cont">
@@ -33,12 +26,6 @@ function FillAns(props) {
           );
         }
       })}
-      {/* {isCheacked === false ?
-      <div className="cheack-btn btn" onClick={cheackAns}>בדיקה</div>
-      :
-      <div className="cheack-btn btn" onClick={props.changeQuestion}>הבא</div>
-      } */}
-      {/* <div className="cheack-btn btn" >בדיקה</div> */}
     </div>
   );
 }

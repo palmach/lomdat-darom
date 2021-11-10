@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./QuestionsContainer.css";
+import gsap from "gsap";
 import Answer from "../../Components/answer/Answer";
 import Map from "../../Components/map/Map";
 import FillAns from "../../Components/fillAns/FillAns";
@@ -8,13 +9,23 @@ import { Markup } from "interweave";
 
 function QuestionsContainer(props) {
   const [isCheacked, setIsCheacked] = useState(false);
+  // const [isAnswerd, setIsAnswerd] = useState(false);
   const cheackAns = () => {
-    console.log("chchcch");
     setIsCheacked(true);
   };
 
+  // useEffect(()=>{
+  //   if(props.questionNum===0){
+
+  //     gsap.to(".black-back", { display:"none", opacity:0, duration:1.75 });
+  //   }
+
+  // },[props.questionNum])
+
   return (
     <div className="questions-container under-question-headlie">
+      {/* <div className="black-back" ></div> */}
+
       <div className="answers-container">
         <Markup
           className="question text-questions"
@@ -41,6 +52,7 @@ function QuestionsContainer(props) {
                 ansText={ans}
                 ansNum={index}
                 changeQuestion={props.changeQuestion}
+                setIsAnswerd={props.setIsAnswerd}
               />
             );
           })
@@ -57,10 +69,10 @@ function QuestionsContainer(props) {
       )}
 
       {/* // <div className="cheack-btn btn" onClick={}>בדיקה</div> */}
-      {props.hasExplain && (
+      { props.hasExplain && (
         <div
           className="btn back-btn change-explain"
-          onClick={props.changeFromExplain}
+          onClick={ props.changeFromExplain }
         >
           חזור
         </div>

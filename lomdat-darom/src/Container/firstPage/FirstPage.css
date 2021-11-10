@@ -1,6 +1,5 @@
 .first-page {
-    background-image: url(../../images/first-back.png);
-    background-size: 100% 100%;
+    position: absolute;
     width: 100vW;
     height: 100vh;
     display: flex;

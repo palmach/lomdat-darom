@@ -6,6 +6,7 @@ import Text from "./../../Text.json";
 function FillTab(props) {
   const colorRef = useRef();
   const [inputValue, setInputValue] = useState("");
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const handelChange = (event) => {
     setInputValue(event.target.value);
@@ -13,16 +14,13 @@ function FillTab(props) {
 
   useEffect(() => {
     if (props.isCheacked) {
-      console.log("inputValue "+inputValue);
-      console.log("props.endValue "+props.endValue);
       if (inputValue === props.endValue) {
-        console.log("TRU");
         gsap.to(colorRef.current, {
           borderBottomColor: "#56821D",
           duration: 0.25,
         });
+        setIsCorrect(true)
       } else {
-        console.log("FAL");
         gsap.to(colorRef.current, {
           borderBottomColor: "#bb3c02",
           duration: 0.25,
@@ -38,6 +36,8 @@ function FillTab(props) {
       className="fill-tab tabs"
       value={inputValue}
       onChange={handelChange}
+      disabled = {isCorrect}
+      // disabledInputStyle={{color:'black'}}
     />
   );
 }

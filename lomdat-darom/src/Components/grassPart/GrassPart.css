@@ -1,13 +1,7 @@
-/* .cls-1 {
-  fill: none;
-} */
 .grass-tower-cont,
 .tower {
   isolation: isolate;
 }
-/* .cls-3 {
-  opacity: 0.9;
-} */
 .grass-cont{
     opacity: 0.9;
   clip-path: url(#clip-path);
@@ -18,18 +12,6 @@
 .bush10 {
   fill: url(#linear-gradient-2);
 }
-/* .cls-7 {
-  fill: url(#linear-gradient-3);
-} */
-/* .cls-8 {
-  fill: url(#linear-gradient-4);
-}
-.cls-9 {
-  fill: url(#linear-gradient-5);
-} */
-/* .cls-10 {
-  fill: url(#linear-gradient-6);
-} */
 .hill3 {
   fill: url(#linear-gradient-7);
 }
@@ -88,9 +70,6 @@
 .bush7 {
   fill: url(#linear-gradient-18);
 }
-/* .cls-27 {
-  fill: url(#linear-gradient-19);
-} */
 .hill2 {
   fill: url(#linear-gradient-20);
 }
@@ -100,9 +79,6 @@
 .green-shadow4 {
   fill: #2d5e1b;
 }
-/* .cls-31 {
-  fill: url(#linear-gradient-21);
-} */
 .bush11 {
   fill: url(#linear-gradient-22);
 }

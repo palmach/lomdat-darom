@@ -1,27 +1,44 @@
-// LastPage
-
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./LastPage.css";
-import { useHistory } from "react-router-dom";
 import gsap from "gsap";
 import SkyPart from "../../Components/skyPart/SkyPart";
-import DesertPart from "../../Components/desertPart/DesertPart";
-import GrassPart from "../../Components/grassPart/GrassPart";
-import FlowersPart from "../../Components/flowersPart/FlowersPart";
+import AboutPage from "../aboutPage/AboutPage";
+import FirstPage from "../firstPage/FirstPage";
+import { useHistory } from "react-router-dom";
+
 
 function LastPage(props) {
+  const [isAbout, setIsAbout] = useState(false);
   const history = useHistory();
 
+  const blackRef =useRef();
+
+
+  // useEffect(()=>{console.log(props.pageNum);},[props.pageNum])
+
   useEffect(() => {
-    if (props.pageNum === 1) {
-    } else if (props.pageNum === 2) {
+     if (props.pageNum === 2) {
+      gsap.to(blackRef.current, { display:"block", opacity:1, duration:1.75 });
+      // gsap.to(blackRef.current, { display:"none", opacity:0, delay: 2.3, duration:1.75 });
+      // gsap.from(".quizz-part", { backgroundColor: "black",delay: 0.55, duration:0.25 });
+      // gsap.to(".end-part", { backgroundColor: "#ffffff00", delay: 0.65, duration:0.25 });
+
+      const timer = setTimeout(() => {
       history.push("/questions");
+      }, 2500);
+      return () => clearTimeout(timer);
+      // history.push("/questions");
     }
   }, [props.pageNum]);
 
+  const toAbout = () => {
+    setIsAbout(true);
+  };
+
   return (
-    <div className="end-part">
-      <SkyPart />
+    <div className="end-part" >
+      <div className="black-back" ref={blackRef}></div>
+      <SkyPart /> 
       <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 1080 1920">
         <defs>
           <clipPath id="clip-path-3">
@@ -686,12 +703,52 @@ function LastPage(props) {
           d="M617.76,1583.55a7.16,7.16,0,0,0-4-3.09c-1.89-.5-2.95,1.24-3.09,2.89,0,.08-.08.15-.1.23a4.35,4.35,0,0,0,1.62,4.66C615.29,1590.58,619.7,1587.07,617.76,1583.55Z"
         />
       </svg>
-      <div className="end-content">
-          <p className="end-quote">"כי מדרום תיפתח הטובה…"</p>
+
+      {props.pageNum <=2 ? (
+        <FirstPage pageNum={props.pageNum} setPageNum={props.setPageNum} />
+      ) : isAbout ? (
+        <AboutPage />
+      ) : (
+        <div className="end-content">
+          <div className="end-text-cont">
+            <p className="end-quote">" כי מדרום תיפתח הטובה "</p>
+            <p className="end-text">כל הכבוד סיימתם את הלומדה בהצלחה!</p>
+            <p className="end-text">תודה שביצעתם את לומדת פיקוד דרום!</p>
+            <div className="pic-last"></div>
+          </div>
+          <div className="about-btn btn" onClick={toAbout}>
+            אודות
+          </div>
+        </div>
+      )}
+{/* 
+      {isAbout ? (
+        <AboutPage />
+      ) : (
+        <div className="end-content">
+          <div className="end-text-cont">
+            <p className="end-quote">" כי מדרום תיפתח הטובה "</p>
+            <p className="end-text">כל הכבוד סיימתם את הלומדה בהצלחה!</p>
+            <p className="end-text">תודה שביצעתם את לומדת פיקוד דרום!</p>
+            <div className="pic-last"></div>
+          </div>
+          <div className="about-btn btn" onClick={toAbout}>
+            אודות
+          </div>
+        </div>
+      )} */}
+
+      {/* <div className="end-content">
+        <div className="end-text-cont">
+          <p className="end-quote">" כי מדרום תיפתח הטובה "</p>
           <p className="end-text">כל הכבוד סיימתם את הלומדה בהצלחה!</p>
           <p className="end-text">תודה שביצעתם את לומדת פיקוד דרום!</p>
           <div className="pic-last"></div>
-      </div>
+        </div>
+        <div className="about-btn btn" onClick={toAbout}>
+          אודות
+        </div>
+      </div> */}
     </div>
   );
 }

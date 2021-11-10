@@ -47,12 +47,11 @@
 }
 
 .city-container {
-  width: 95%;
+  width: 96%;
   border-radius: 1em;
   padding: 0.7vh 0.5vw;
-  /* height: -moz-fit-content; */
   height: fit-content;
-  min-height: 20vh;
+  min-height: 14vh;
   background-color: #c38324;
   display: flex;
   flex-wrap: wrap;
@@ -63,12 +62,12 @@
 
 .map-cont {
   width: 100%;
-  height: 63%;
+  height: 66%;
   margin-bottom: 2vh;
 }
 
 .city-drag {
-  font-size: 2.8vh;
+  font-size: 2.3vh;
   /* font-size: 3vh; */
   margin: 0.3vh;
   background: #ceb36e;
@@ -101,6 +100,16 @@
   /* display: none; */
 }
 
+.cheack-cont {
+  width: 96%;
+  padding: 0.7vh 0.5vw;
+  height: 15vh;
+  display: flex;
+  justify-content: flex-end;
+  align-content: space-around;
+
+}
+
 .placed {
   /* padding: 1vh;
 width: fit-content; */
@@ -109,6 +118,7 @@ width: fit-content; */
   width: 18vw;
   margin: 0.3vw;
 }
+
 
 .city4,
 .city10 {

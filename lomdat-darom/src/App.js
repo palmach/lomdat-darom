@@ -7,14 +7,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const [pageNum, setPageNum] = useState(0);
-  const [questionNum, setQuestionNum] = useState(5);
+  const [questionNum, setQuestionNum] = useState(0);
 
   return (
-    <div className="App">
+    <div className="app">
       <Router>
         <Switch>
           <Route exact path="/">
-            <FirstPage pageNum={pageNum} setPageNum={setPageNum} />
+            <LastPage pageNum={pageNum} setPageNum={setPageNum} />
+
+            {/* <FirstPage pageNum={pageNum} setPageNum={setPageNum} /> */}
           </Route>
           <Route exact path="/questions">
             <QuizzPart

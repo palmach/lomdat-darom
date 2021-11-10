@@ -26,9 +26,10 @@ function FirstPage(props) {
         });
       }, 500);
       return () => clearTimeout(timer);
-    } else if (props.pageNum === 2) {
-      history.push("/questions");
-    }
+    } 
+    // else if (props.pageNum === 2) {
+    //   history.push("/questions");
+    // }
   }, [props.pageNum]);
 
   useEffect(() => {
