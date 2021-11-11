@@ -13,6 +13,7 @@ function FirstPage(props) {
 
   const changeText = () => {
     props.setPageNum((prevState) => prevState + 1);
+    console.log(props.pageNum);
   };
 
   useEffect(() => {

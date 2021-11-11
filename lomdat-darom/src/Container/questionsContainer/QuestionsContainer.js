@@ -53,6 +53,7 @@ function QuestionsContainer(props) {
                 ansNum={index}
                 changeQuestion={props.changeQuestion}
                 setIsAnswerd={props.setIsAnswerd}
+                isAnswerd={props.isAnswerd}
               />
             );
           })

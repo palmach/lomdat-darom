@@ -16,12 +16,15 @@
     overflow-y: scroll;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
+.explain-br{
+    display: none;
+}
 .pic-cont{
     width: 80%;
-    height: 50%;
+    height: 57%;
     margin-top: 0.5vh;
 }
 

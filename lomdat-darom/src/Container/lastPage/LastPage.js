@@ -6,25 +6,28 @@ import AboutPage from "../aboutPage/AboutPage";
 import FirstPage from "../firstPage/FirstPage";
 import { useHistory } from "react-router-dom";
 
-
 function LastPage(props) {
   const [isAbout, setIsAbout] = useState(false);
   const history = useHistory();
 
-  const blackRef =useRef();
-
+  const blackRef = useRef();
 
   // useEffect(()=>{console.log(props.pageNum);},[props.pageNum])
 
   useEffect(() => {
-     if (props.pageNum === 2) {
-      gsap.to(blackRef.current, { display:"block", opacity:1, duration:1.75 });
+    console.log(props.pageNum);
+    if (props.pageNum === 2) {
+      gsap.to(blackRef.current, {
+        display: "block",
+        opacity: 1,
+        duration: 1.75,
+      });
       // gsap.to(blackRef.current, { display:"none", opacity:0, delay: 2.3, duration:1.75 });
       // gsap.from(".quizz-part", { backgroundColor: "black",delay: 0.55, duration:0.25 });
       // gsap.to(".end-part", { backgroundColor: "#ffffff00", delay: 0.65, duration:0.25 });
 
       const timer = setTimeout(() => {
-      history.push("/questions");
+        history.push("/questions");
       }, 2500);
       return () => clearTimeout(timer);
       // history.push("/questions");
@@ -36,9 +39,9 @@ function LastPage(props) {
   };
 
   return (
-    <div className="end-part" >
-      <div className="black-back" ref={blackRef}></div>
-      <SkyPart /> 
+    <div className="end-part">
+      <div className="black-back from-black" ref={blackRef}></div>
+      <SkyPart />
       <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 1080 1920">
         <defs>
           <clipPath id="clip-path-3">
@@ -704,11 +707,13 @@ function LastPage(props) {
         />
       </svg>
 
-      {props.pageNum <=2 ? (
+      {props.pageNum <= 2 && (
         <FirstPage pageNum={props.pageNum} setPageNum={props.setPageNum} />
-      ) : isAbout ? (
-        <AboutPage />
-      ) : (
+      )}
+
+      {props.pageNum <= 2 ? (
+        <FirstPage pageNum={props.pageNum} setPageNum={props.setPageNum} />
+      ) : !isAbout ? (
         <div className="end-content">
           <div className="end-text-cont">
             <p className="end-quote">" כי מדרום תיפתח הטובה "</p>
@@ -720,8 +725,10 @@ function LastPage(props) {
             אודות
           </div>
         </div>
+      ) : (
+        <AboutPage />
       )}
-{/* 
+      {/* 
       {isAbout ? (
         <AboutPage />
       ) : (

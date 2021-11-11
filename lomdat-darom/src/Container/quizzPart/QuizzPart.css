@@ -42,3 +42,8 @@
     align-items: center;
     /* margin-top: -6vh; */
 }
+
+.to-black{
+    display: block;
+    opacity: 1;
+  }

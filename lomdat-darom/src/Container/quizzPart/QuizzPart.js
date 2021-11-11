@@ -17,24 +17,36 @@ function QuizzPart(props) {
   const history = useHistory();
   const [isAnswerd, setIsAnswerd] = useState(false);
 
-  const hasExplain =
-    Text[props.questionNum]["explain"] !== "" ||
-    Text[props.questionNum]["pic"] !== "";
+  var hasExplain;
+  // var hasExplain =
+  //   Text[props.questionNum]["explain"] !== "" ||
+  //   Text[props.questionNum]["pic"] !== "";
   const [toExplain, setToExplain] = useState(false);
 
   useEffect(() => {
-    if (hasExplain === true) {
-      setToExplain(true);
-    } else {
-      setToExplain(false);
-    }
-    if (props.questionNum === 13) {
-      history.push("/end");
+    if (props.questionNum !== 14) {
+    //   props.setQuestionNum(3);
+    //   history.push("/end");
+    // } else {
+      hasExplain =
+        Text[props.questionNum]["explain"] !== "" ||
+        Text[props.questionNum]["pic"] !== "";
+      if (hasExplain === true) {
+        setToExplain(true);
+      } else {
+        setToExplain(false);
+      }
     }
   }, [props.questionNum]);
 
   const changeQuestion = () => {
-    props.setQuestionNum((prevState) => prevState + 1);
+    if (props.questionNum + 1 === 14) {
+      props.setPageNum(3);
+      history.push("/end");
+    } else {
+      props.setQuestionNum((prevState) => prevState + 1);
+    }
+    
   };
 
   const changeFromExplain = () => {
@@ -43,18 +55,15 @@ function QuizzPart(props) {
     }
   };
 
-  useEffect(()=>{
-    if(props.questionNum===0){
-
-      gsap.from(".black-back", { display:"block", opacity:1, duration:1.75 });
+  useEffect(() => {
+    if (props.questionNum === 0) {
+      gsap.to(".black-back", { display: "none", opacity: 0, duration: 1.75 });
     }
-
-  },[props.questionNum])
-
+  }, []);
 
   return (
     <div className="quizz-part">
-      <div className="black-back" ></div>
+      <div className="black-back to-black"></div>
 
       <SkyPart />
       {
