@@ -15,8 +15,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LastPage pageNum={pageNum} setPageNum={setPageNum} />
-
-            {/* <FirstPage pageNum={pageNum} setPageNum={setPageNum} /> */}
           </Route>
           <Route exact path="/questions">
             <QuizzPart

@@ -16,21 +16,26 @@ function LastPage(props) {
 
   useEffect(() => {
     console.log(props.pageNum);
-    if (props.pageNum === 2) {
+    // console.log(blackRef.current.className);
+    // if (props.pageNum === 2) {
+    //   gsap.to(blackRef.current, {
+    //     display: "block",
+    //     opacity: 1,
+    //     duration: 1.75,
+    //   });
+
+    //   const timer = setTimeout(() => {
+    //     history.push("/questions");
+    //   }, 2500);
+    //   return () => clearTimeout(timer);
+    //   // history.push("/questions");
+    // }   else
+   if (props.pageNum === 3) {
       gsap.to(blackRef.current, {
-        display: "block",
-        opacity: 1,
+        display: "none",
+        opacity: 0,
         duration: 1.75,
       });
-      // gsap.to(blackRef.current, { display:"none", opacity:0, delay: 2.3, duration:1.75 });
-      // gsap.from(".quizz-part", { backgroundColor: "black",delay: 0.55, duration:0.25 });
-      // gsap.to(".end-part", { backgroundColor: "#ffffff00", delay: 0.65, duration:0.25 });
-
-      const timer = setTimeout(() => {
-        history.push("/questions");
-      }, 2500);
-      return () => clearTimeout(timer);
-      // history.push("/questions");
     }
   }, [props.pageNum]);
 
@@ -40,7 +45,18 @@ function LastPage(props) {
 
   return (
     <div className="end-part">
-      <div className="black-back from-black" ref={blackRef}></div>
+      {/* <div
+        className={`black-back ${
+          props.pageNum === 0 
+            ? "from-black"
+          :props.pageNum === 1
+            ? "from-black"
+            : props.pageNum === 3
+            ? "black-back"
+            : ""
+        }`}
+        ref={blackRef}
+      ></div> */}
       <SkyPart />
       <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 1080 1920">
         <defs>

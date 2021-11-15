@@ -14,13 +14,9 @@ function QuestionsContainer(props) {
     setIsCheacked(true);
   };
 
-  // useEffect(()=>{
-  //   if(props.questionNum===0){
-
-  //     gsap.to(".black-back", { display:"none", opacity:0, duration:1.75 });
-  //   }
-
-  // },[props.questionNum])
+  useEffect(()=>{
+   console.log("toExplain "+props.toExplain);
+  },[props.questionNum])
 
   return (
     <div className="questions-container under-question-headlie">
@@ -70,7 +66,7 @@ function QuestionsContainer(props) {
       )}
 
       {/* // <div className="cheack-btn btn" onClick={}>בדיקה</div> */}
-      { props.hasExplain && (
+      { props.toExplain && (
         <div
           className="btn back-btn change-explain"
           onClick={ props.changeFromExplain }

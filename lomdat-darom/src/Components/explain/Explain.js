@@ -4,6 +4,8 @@ import { Markup } from "interweave";
 import Text from "./../../Text.json";
 
 function Explain(props) {
+  console.log("eplain");
+  // console.log(props.hasexpl);
   return (
     <div className="explain-part under-question-headlie" >
       {Text[props.questionNum]["explain"] !== "" && <Markup className="explian text-questions explain-text" content={Text[props.questionNum]["explain"]} />}

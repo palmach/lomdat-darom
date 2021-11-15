@@ -16,31 +16,49 @@ import Text from "../../Text.json";
 function QuizzPart(props) {
   const history = useHistory();
   const [isAnswerd, setIsAnswerd] = useState(false);
+  // const [hasExplain, setHasExplain] = useState(false);
 
   var hasExplain;
-  // var hasExplain =
   //   Text[props.questionNum]["explain"] !== "" ||
   //   Text[props.questionNum]["pic"] !== "";
   const [toExplain, setToExplain] = useState(false);
 
   useEffect(() => {
     if (props.questionNum !== 14) {
-    //   props.setQuestionNum(3);
-    //   history.push("/end");
-    // } else {
-      hasExplain =
+      //   props.setQuestionNum(3);
+      //   history.push("/end");
+      // } else {
+        hasExplain =
+        // setHasExplain()
         Text[props.questionNum]["explain"] !== "" ||
         Text[props.questionNum]["pic"] !== "";
-      if (hasExplain === true) {
-        setToExplain(true);
-      } else {
-        setToExplain(false);
+        console.log("hasExplain "+hasExplain);
+        // if (hasExplain === true) {
+          setToExplain(hasExplain);
+        //   console.log("num true");
+        //   console.log(toExplain);
+        // } else {
+        //   setToExplain(false);
+        //   console.log("num44");
+        // }
       }
-    }
-  }, [props.questionNum]);
+      console.log(hasExplain);
+      console.log("toExplain "+toExplain);
+    }, [props.questionNum]);
+    // console.log(toExplain);
 
+
+    useEffect(()=>{
+      console.log("toExplain "+toExplain);
+
+      },[toExplain])
   const changeQuestion = () => {
     if (props.questionNum + 1 === 14) {
+      gsap.to(".black-back", {
+        display: "block",
+        opacity: 1,
+        duration: 1.75,
+      });
       props.setPageNum(3);
       history.push("/end");
     } else {
@@ -50,7 +68,8 @@ function QuizzPart(props) {
   };
 
   const changeFromExplain = () => {
-    if (isAnswerd === false && hasExplain) {
+    if (isAnswerd === false && toExplain) {
+    // if (isAnswerd === false && hasExplain) {
       setToExplain((prevState) => !prevState);
     }
   };
@@ -59,11 +78,13 @@ function QuizzPart(props) {
     if (props.questionNum === 0) {
       gsap.to(".black-back", { display: "none", opacity: 0, duration: 1.75 });
     }
+    // console.log(toExplain);
   }, []);
 
   return (
     <div className="quizz-part">
-      <div className="black-back to-black"></div>
+      <div className={`black-back ${props.pageNum ===3 ?"from-black":props.pageNum ===2 ?"to-back":""}`}></div>
+      {/* <div className="black-back to-black"></div> */}
 
       <SkyPart />
       {
@@ -81,18 +102,18 @@ function QuizzPart(props) {
         <p className="headline question-headline">
           שאלה {props.questionNum + 1}
         </p>
-        {hasExplain && toExplain ? (
+        {toExplain   ? (
           <Explain
             questionNum={props.questionNum}
             changeFromExplain={changeFromExplain}
-          />
+            />
         ) : (
           <QuestionsContainer
             questionNum={props.questionNum}
             pageNum={props.pageNum}
             changeQuestion={changeQuestion}
             changeFromExplain={changeFromExplain}
-            hasExplain={hasExplain}
+            toExplain={toExplain}
             isAnswerd={isAnswerd}
             setIsAnswerd={setIsAnswerd}
           />

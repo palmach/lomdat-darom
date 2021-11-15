@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./FirstPage.css";
 import { useHistory } from "react-router-dom";
 import gsap from "gsap";
 
 function FirstPage(props) {
   const history = useHistory();
+  const blackRef = useRef();
+
   const [textArray, setTextArray] = useState([]);
   const emptyTextArray = [
     "שלום וברוכים הבאים ללומדת מורשת פיקוד הדרום!",
@@ -14,8 +16,21 @@ function FirstPage(props) {
   const changeText = () => {
     props.setPageNum((prevState) => prevState + 1);
     console.log(props.pageNum);
-  };
+    // if (props.pageNum === 2) {
+    //   gsap.to(blackRef.current, {
+    //     display: "block",
+    //     opacity: 1,
+    //     duration: 1.75,
+    //   });
 
+    //   const timer = setTimeout(() => {
+    //     history.push("/questions");
+    //   }, 2500);
+    //   return () => clearTimeout(timer);
+    //   // history.push("/questions");
+    // } 
+  };
+  
   useEffect(() => {
     if (props.pageNum === 1) {
       const timer = setTimeout(() => {
@@ -27,14 +42,28 @@ function FirstPage(props) {
         });
       }, 500);
       return () => clearTimeout(timer);
+    } else if (props.pageNum === 2) {
+      gsap.to(blackRef.current, {
+        display: "block",
+        opacity: 1,
+        duration: 1.75,
+      });
+  
+      const timer = setTimeout(() => {
+        history.push("/questions");
+      }, 2500);
+      return () => clearTimeout(timer);
+      // history.push("/questions");
     } 
-    // else if (props.pageNum === 2) {
-    //   history.push("/questions");
-    // }
   }, [props.pageNum]);
 
   useEffect(() => {
     if (textArray.length === 1) {
+      // gsap.to(".text-opening0", {
+      //   y: -50,
+      //   duration: 0.5,
+      //   delay:0.5
+      // });
       const timer = setTimeout(() => {
         setTextArray((oldArray) => [...oldArray, emptyTextArray[1]]);
         gsap.to(".text-opening1", {
@@ -42,8 +71,13 @@ function FirstPage(props) {
           opacity: 1,
           duration: 0.8,
         });
+        // gsap.to(".text-opening1", {
+        //   y: -50,
+        // duration: 0.5,
+        // delay:0.5
+        // });
         gsap.to(".start-btn", {
-          display: "block",
+          // display: "block",
           opacity: 1,
           duration: 0.8,
           delay: 1,
@@ -55,6 +89,10 @@ function FirstPage(props) {
 
   return (
     <div className="first-page">
+      <div
+        className="black-back from-black"
+        ref={blackRef}
+      ></div>
       {props.pageNum === 0 ? (
         <div className="first-headline headline">
           <div className="bigger-word">לומדת</div> פיקוד דרום
